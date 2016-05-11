@@ -44,21 +44,6 @@ $red: #FF0000;
 	color: $red;
 }
 
-.navbar {
-	margin-bottom: 50px;
-	@include box-shadow;
-	border: none;
-	.navbar-brand {
-		text-transform: uppercase;
-		letter-spacing: -1px;
-		font-weight: bold;
-		font-size: 25px;
-		a {
-			color: #563D7C;
-		}
-	}
-}
-
 .recipe {
 	background-color: $dark_gray;
 	margin-bottom: 40px;
@@ -99,6 +84,8 @@ $red: #FF0000;
 	@include box-shadow;
 	border-radius: 5px;
 	border-style: groove;
+	min-height: 489px;
+	max-height: 489px;
 	border-color: #E8E8E8;
 	.image_wrapper {
 		max-width: 100%;
@@ -107,10 +94,12 @@ $red: #FF0000;
 	}
 	img {
 		width: 100%;
+		min-height: 489px;
+		max-height: 489px;
 		-webkit-transition: all .3s ease-out;
-	  -moz-transition: all .3s ease-out;
-	  -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+		-moz-transition: all .3s ease-out;
+		-o-transition: all .3s ease-out;
+		transition: all .3s ease-out;
 		&:hover {
 			transform: scale(1.075);
 		}
@@ -118,6 +107,7 @@ $red: #FF0000;
 }
 
 #recipe_info {
+	margin-bottom: 40px;
 	background: #F8F8F8;
 	@include box-shadow;
 	min-height: 489px;

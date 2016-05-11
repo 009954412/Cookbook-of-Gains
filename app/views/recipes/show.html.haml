@@ -2,7 +2,7 @@
 	-flash.each do |name, msg|
 		= content_tag :div, msg, class: "alert alert-info"
 	-flash.discard
-	#recipe_top.row
+	.row
 		.col-md-4
 			.recipe_border
 				.image_wrapper
@@ -23,7 +23,7 @@
 					Submitted by
 					= @recipe.user.email.capitalize
 				%br
-					%p.description= @recipe.description.capitalize
+				%p.description= @recipe.description.capitalize
 
 	.row
 		.col-md-6
