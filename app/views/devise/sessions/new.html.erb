@@ -1,47 +1,63 @@
-<div class="col-md-8 col-md-offset-2">
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2>
-        <center>Sign In<center>
-        </h2>
-      </div>
-	  <div class="panel-body">
+<div class= "main_content">
+	<% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, class: "alert alert-info" %>
+	<% end %>
+	<% flash.discard %>
 
-		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<div class="col-md-8 col-md-offset-2">
+	  <div class="row">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h2>
+	        <center>Sign In<center>
+	        </h2>
+	      </div>
+		  <div class="panel-body">
+			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-		  <div class="form-inputs">
+			  <div class="form-inputs">
 
-		  	<div class="form-group">
-		    	<%= f.input :email, required: false, autofocus: true, input_html: { class: 'form-control' } %>
-		    </div>
+			  	<div class="form-group">
+			  		<h4>
+			    		<%= f.input :email, required: false, autofocus: true, input_html: { class: 'form-control' } %>
+			    	</h4>
+			    </div>
 
-		    <div class="form-group">
-		    	<%= f.input :password, required: false, input_html: { class: 'form-control' } %>
+			    <div class="form-group">
+			    	<h4>
+			    		<%= f.input :password, required: false, input_html: { class: 'form-control' } %>
+			    	</h4>
+				</div>
+
+				<div class="checkbox">
+					<h5>
+			    		<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+			    	</h5>
+			    </div>
+
+			    <br>
+
+			    <div class="submit">
+			    	<div class="form-actions">
+			    		<%= link_to "Back", :back, class: "btn btn-custom pull-left" %> 
+				  	</div>
+			    </div>
+
+				<div class="submit">
+			    	<div class="form-actions">
+			    		<%= f.button :submit, "Sign in", class: 'btn btn-custom pull-right' %>
+				  	</div>
+			    </div>
+
+			 </div>
+			<% end %>
+	      </div>
+	      	<div class="panel-footer">
+	      		<div class="style">
+					<%= render "devise/shared/links" %>
+			  	</div>
 			</div>
-
-			<div class="checkbox">
-		    	<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-		    </div>
-
-		    <div class="submit">
-		    	<div class="form-actions">
-		    		<%= link_to "Back", root_path, class: "btn btn-default pull-left" %> 
-			  	</div>
-		    </div>
-
-			<div class="submit">
-		    	<div class="form-actions">
-		    		<%= f.button :submit, "Sign in", class: 'btn btn-primary pull-right' %>
-			  	</div>
-		    </div>
-
-		 </div>
-		<% end %>
-      </div>
-      	<div class="panel-footer">
-			<%= render "devise/shared/links" %>
-	  	</div>
+		  </div>
+		</div>
 	</div>
-  </div>
 </div>

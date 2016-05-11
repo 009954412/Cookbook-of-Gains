@@ -1,0 +1,98 @@
+#banner {
+	background-color: black;
+	background-image: url(image_path("banner.jpg"));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	min-height: 475px;
+	display: table;
+	.banner_content {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		h1 {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			font-weight: bold;
+			color: white;
+			font-size: 3.5rem;
+			margin: 0;
+		}
+		p {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			font-size: 1.5rem;
+			margin: 0 0 2.5rem 0;
+			color: rgba(250, 250, 250, 0.5);
+		}
+	}
+}
+
+#testimonial {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #afb0b0;
+	padding: 3.5rem 0;
+	.quote {
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 3.5rem;
+		margin: 0 0 .5rem 0;
+	}
+	.name {
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		color: $dark_gray;
+		margin: 0;
+		font-size: 1.5rem;
+	}
+}
+
+#callouts {
+	background-image: url(image_path("collage.jpg"));
+	background-color: gray;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	min-height: 600px;
+	display: table;
+	.callout_inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.callout {
+		text-align: center;
+		width: 33.3333%;
+		padding: 1.5rem 2.5%;
+		float: left;
+		h2 {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			font-weight: bold;
+			color: white;
+			margin-bottom: 0;
+		}
+		p {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			color: rgba(250, 250, 250, 0.4);
+		}
+	}
+}
+
+#bottom_cta {
+	text-align: center;
+	color: $dark_gray;
+	padding: 6.5rem 0;
+	h2 {
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 7rem;
+		margin: 0;
+	}
+	p {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			font-size: 2.5rem;
+			margin: 0 0 2.5rem 0;
+			color: #a7a8a8;
+		}
+}
+
+#emptyspace{
+	padding: 22px;
+}

@@ -1,47 +1,57 @@
-<div class="col-md-8 col-md-offset-2">
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-      <h2>
-        <center>Edit Your Account, <%= @user.email.capitalize %><center>
-      <h2>
-      </div>
+<div class= "main_content">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h2>
+          <center>Edit Your Account, <%= @user.email.capitalize %><center>
+        <h2>
+        </div>
 
-      <div class="panel-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-           <%= devise_error_messages! %>
+        <div class="panel-body">
+         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <div class="form-group">
-            <%= f.label "current_password" %> <br />
-            <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "new_password" %> <br />
-            <%= f.password_field :password, autocomplete: "off", class: "form-control", min: "8" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "new_password_confirmation" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-          </div>
-
-            <div class="button">
-              <%= link_to "Back", :back, class: "btn btn-default pull-left" %> 
+          <div class="form-inputs">
+            <div class="form-group">
+              <h4>
+                <%= f.input :current_password, label: "Current password", error: "Incorrect password", required: true, autofocus: true,  input_html: { class: 'form-control' } %>
+              </h4>
             </div>
 
-          <div class="actions">
-            <%= f.submit "Update", class: "btn btn-primary pull-right" %>
-          </div>
-        <% end %>
+            <div class="form-group">
+              <h4>
+                <%= f.input :password, label: "New password", autocomplete: "off", error: "Please specify a new password with length >= 8", required: true,  input_html: { min: '8', class: 'form-control' } %>
+              </h4>
+            </div>
+
+            <div class="form-group">
+              <h4>
+                <%= f.input :password_confirmation, label: "New password confirmation", autocomplete: "off", error: "New passwords do not match", required: true,  input_html: { class: 'form-control' } %>
+              </h4>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+              <div class="button">
+                <%= link_to "Back", :back, class: "btn btn-custom pull-left" %> 
+              </div>
+
+            <div class="actions">
+              <%= f.submit "Update", class: "btn btn-custom pull-right" %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
-      <div class="panel-footer">
-           <div class="button">
-            <div class="clearfix">
-              <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs pull-right" %>
+        <div class="panel-footer">
+             <div class="button">
+              <div class="clearfix">
+                <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-custom btn-xs btn-to-right pull-right" %>
+              </div>
             </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>

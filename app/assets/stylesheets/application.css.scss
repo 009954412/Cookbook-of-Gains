@@ -1,21 +1,12 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
  *= require_self
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'global.css.scss';
+@import 'recipes.css.scss';
+@import 'welcome.css.scss';
 
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -23,27 +14,32 @@
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 
-$red: #DB6161;
+$dark_gray: #2B2E2E;
+$light_gray: #C0C1C1;
+$green: #33CD99;
+$red: #FF0000;
 
-body {
-	background-image: url(http://orig05.deviantart.net/4a93/f/2016/114/4/f/_heaven__by_era_7-da03z7r.jpg);
-	background-size: cover;                
+.main_content {
+	padding: 125px 100px 125px 100px;
+	min-width: 100%;
+    min-height: 100%;
+	background-image: url(image_path("blur.jpg"));
+	background-size: cover;            
     background-repeat:   no-repeat;
     background-position: center center; 
     background-attachment: fixed;
 }
 
-.main_content {
-	padding: 0 0 50px 0;
-}
-
-.alert {
+.alert.alert-info {
 	padding: 15px;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 15px;
+	text-align: center;
 	margin-bottom: 20px;
 	border: 1px solid transparent;
 	border-radius: 5px;
 	@include box-shadow;
-	background: white;
+	background-color: $dark_gray;
 	font-weight: bold;
 	color: $red;
 }
@@ -64,10 +60,7 @@ body {
 }
 
 .recipe {
-	background: #F8F8F8;
-	border-style: groove;
-	border-color: #E8E8E8;
-	border-radius: 5px;
+	background-color: $dark_gray;
 	margin-bottom: 40px;
 	@include box-shadow;
 	.image_wrapper {
@@ -90,25 +83,45 @@ body {
 		margin: 0;
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 24px;
-		font-style: normal;
-		font-variant: normal;
-		font-weight: 100;
 		line-height: 30px;
 		a {
-			color: #563D7C;
+			color: white;
+			text-decoration: none;
+			&:hover {
+				color: $red;
+			}
 		}
 	}
 }
 
-#recipe_top {
-	margin-bottom: 50px;
+.recipe_border {
+	margin-bottom: 40px;
+	@include box-shadow;
+	border-radius: 5px;
+	border-style: groove;
+	border-color: #E8E8E8;
+	.image_wrapper {
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		-webkit-transition: all .3s ease-out;
+	  -moz-transition: all .3s ease-out;
+	  -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+	}
 }
 
 #recipe_info {
 	background: #F8F8F8;
 	@include box-shadow;
-	min-height: 360px;
-	max-height: 360px;
+	min-height: 489px;
+	max-height: 489px;
 	border-radius: 5px;
 	padding: 1em;
 	border-style: groove;
@@ -120,15 +133,15 @@ body {
 	h1 {
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 36px;
-		font-weight: normal;
+		font-weight: bold;
 		color: black;
 		text-decoration: underline;
 	}	
  	.description{
 	background: #F8F8F8;
 	@include box-shadow;
-	min-height: 450px;
-	max-height: 450px;
+	min-height: 600px;
+	max-height: 600px;
 	border-radius: 5px;
 	padding: 1em;
 	overflow: auto;
@@ -148,9 +161,19 @@ body {
 		margin-top: 0cm;
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 36px;
-		font-weight: normal;
+		font-weight: bold;
 		color: black;
 		text-decoration: underline;
+	}
+	span{
+		color: white;
+		text-decoration: none;
+		&:hover {
+			color: $red;
+		}
+	}
+	p{
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 	}
 	.font{
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
@@ -158,9 +181,9 @@ body {
 		color: black;
 	}
 	.description {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		color: black;
-		font-size: 20px;
+		font-size:26px;
 	}
 }
 
@@ -169,7 +192,7 @@ body {
 	ul, ol {
 		padding-left: 18px;
 		li {
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 			color: black;
 			padding: 1em 0;
 			border-bottom: 1px solid #EAEAEA;
@@ -203,5 +226,55 @@ body {
 }
 
 .custom {
-    width: 128.5px !important;
+    width: 177.5px !important;
+}
+
+.customcolor{
+	background-color: $dark_gray;
+}
+
+.panel > .panel-heading{
+	background: $dark_gray;
+	color: white;
+	border-bottom: 7px solid $red;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.panel > .panel-body{
+	background: white;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	.style{
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		color: black;
+	}
+}
+
+.panel > .panel-footer{
+	background: $dark_gray;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	.style{
+		a {
+				color: white;
+				text-decoration: none;
+				&:hover {
+					color: $red;
+				}
+			}
+	}
+}
+
+.btn-danger:hover{
+	color: white;
+	text-decoration: none;
+	&:hover {
+		color: white;
+	}
+}
+
+.btn-success:hover{
+	color: white;
+	text-decoration: none;
+	&:hover {
+		color: white;
+	}
 }

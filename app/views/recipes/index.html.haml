@@ -1,17 +1,13 @@
-- @recipe.each_slice(4) do |recipe|
-	.row
-		- recipe.each do |recipe|
-			.col-md-3
-				.recipe
-					.image_wrapper
-						= link_to recipe do
-							= image_tag recipe.image.url(:medium)
-					%center= link_to recipe.title.titleize, recipe
-					.btn-group
-						= link_to like_recipe_path(recipe), method: :put, class: "btn btn-success btn-sm custom" do
-							%span.glyphicon.glyphicon-heart
-								= recipe.get_upvotes.size	
-						
-						= link_to dislike_recipe_path(recipe), method: :put, class: "btn btn-danger btn-sm custom" do
-							%span.glyphicon.glyphicon-thumbs-down
-								= recipe.get_downvotes.size
+.main_content
+	-flash.each do |name, msg|
+		= content_tag :div, msg, class: "alert alert-info"
+	-flash.discard
+	- @recipe.each_slice(4) do |recipe|
+		.row
+			- recipe.each do |recipe|
+				.col-md-3
+					.recipe
+						.image_wrapper
+							= link_to recipe do
+								= image_tag recipe.image.url(:medium)
+						%center= link_to recipe.title.titleize, recipe

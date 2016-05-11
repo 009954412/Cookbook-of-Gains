@@ -1,0 +1,30 @@
+#emptyspace
+#banner
+	.banner_content
+		%h1 The Cookbook of Gains
+		%p Your online cookbook. Cooking made simple.
+		%button.redbutton= link_to "Sign Up", new_user_registration_path
+
+#testimonial
+	.wrapper
+		%p.quote "The best online cookbook I've ever used. Period."
+		%p.name "Krishneel Sahdeo"
+
+#callouts
+	.callout_inner
+		/ .wrapper
+		/ 	.callout
+		/ 		%h2 Recipes
+		/ 		%p moomoomommomoo
+		/ 	.callout
+		/ 		%h2 Recipes
+		/ 		%p moomoomommomoo
+		/ 	.callout
+		/ 		%h2 Recipes
+		/ 		%p moomoomommomoo
+
+#bottom_cta
+	.wrapper
+		%h2 "Strive for Progress. Not perfection."
+		%p Team Gains
+		%button.redbutton= link_to "Get Started", recipes_path

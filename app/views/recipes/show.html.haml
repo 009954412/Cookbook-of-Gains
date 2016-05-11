@@ -1,17 +1,20 @@
 .main_content
+	-flash.each do |name, msg|
+		= content_tag :div, msg, class: "alert alert-info"
+	-flash.discard
 	#recipe_top.row
 		.col-md-4
-			.recipe
+			.recipe_border
 				.image_wrapper
 					= image_tag @recipe.image.url(:medium)	
 
 		.col-md-8
 			#recipe_info
-				= link_to dislike_recipe_path(@recipe), method: :put, class: "btn btn-danger btn-lg pull-right" do
+				= link_to dislike_recipe_path(@recipe), method: :put, class: "btn btn-lg customcolor pull-right" do
 					%span.glyphicon.glyphicon-thumbs-down
 						= @recipe.get_downvotes.size
 
-				= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-success btn-lg btn-space pull-right" do
+				= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-lg customcolor btn-space pull-right" do
 					%span.glyphicon.glyphicon-heart
 						= @recipe.get_upvotes.size	
 
@@ -20,7 +23,7 @@
 					Submitted by
 					= @recipe.user.email.capitalize
 				%br
-					%i.description= @recipe.description.capitalize
+					%p.description= @recipe.description.capitalize
 
 	.row
 		.col-md-6
@@ -40,7 +43,7 @@
 
 	.row
 		.col-md-12
-			= link_to "Back", root_path, class: "btn btn-default"
+			= link_to "Back", :back, class: "btn btn-custom"
 			- if user_signed_in? && ((@recipe.user.id == current_user.id) || current_user.admin?)
-				= link_to "Edit", edit_recipe_path, class: "btn btn-primary pull-right" 
-				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger btn-space pull-right"
+				= link_to "Edit", edit_recipe_path, class: "btn btn-custom pull-right" 
+				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-custom btn-space pull-right"
