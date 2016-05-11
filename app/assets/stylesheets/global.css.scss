@@ -1,13 +1,6 @@
 $dark_gray: #2B2E2E;
 $light_gray: #C0C1C1;
-$green: #33CD99;
 $red: #FF0000;
-
-@mixin bold_font {
-	font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
-	font-weight: bold;
-	text-transform: uppercase;
-}
 
 * {
 	box-sizing: border-box;
@@ -167,4 +160,49 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 textarea {
 	min-height: 100px;
+}
+
+.pagination{
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 19px;
+	background: $dark_gray;
+	padding: 1rem 3.5rem;
+	color: white;
+	border-radius: 1rem;
+}
+
+.custom_pagination{
+	width: 87.6% ;
+	text-align: center;
+	position: absolute;
+	padding: 0.3em;
+	cursor: default;
+	a, span, em{
+		padding: 0.2em 0.5em;
+	}
+	.disabled{
+		color: $light_gray;
+	}
+	.current{
+		font-style: normal;
+		color: $red;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+		&:hover, &:focus{
+		  background: #ededed;
+		  color: $red;
+			}
+	}
+
+	.previous_page, .next_page{
+		border-width: 2px;
+	}
+	.previous_page{
+		margin-right: 1.5em;
+	}
+	.next_page{
+		margin-left: 1.5em;
+	}
 }

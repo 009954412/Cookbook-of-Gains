@@ -2,12 +2,15 @@
 	-flash.each do |name, msg|
 		= content_tag :div, msg, class: "alert alert-info"
 	-flash.discard
-	- @recipe.each_slice(4) do |recipe|
-		.row
-			- recipe.each do |recipe|
-				.col-md-3
-					.recipe
-						.image_wrapper
-							= link_to recipe do
-								= image_tag recipe.image.url(:medium)
-						%center= link_to recipe.title.titleize, recipe
+	.container-fluid
+		- @recipe.each_slice(4) do |recipe|
+			.row
+				- recipe.each do |recipe|
+					.col-md-3
+						.recipe
+							.image_wrapper
+								= link_to recipe do
+									= image_tag recipe.image.url(:medium)
+							%center= link_to recipe.title.titleize, recipe
+	.custom_pagination
+		= will_paginate @recipe

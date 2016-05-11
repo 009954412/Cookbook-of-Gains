@@ -16,6 +16,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'aws-sdk', '~> 1.61.0'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug'
