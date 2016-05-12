@@ -64,9 +64,9 @@
 				.row
 					.col-md-2
 						#comments
-							.text
+							.comment_text
 								Comment on the recipe:
 					.col-md-10
-						.field
+						.comment_field
 							= f.text_area :body, class: "form-control"
 				= f.submit "Add Comment", class: "btn btn-custom pull-right"

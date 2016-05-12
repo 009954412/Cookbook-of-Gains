@@ -1,5 +1,8 @@
 .clearfix
-	.nested-fields
-		= f.input :name, input_html: { class: 'form-control' }
-		%br
-		= link_to_remove_association "Remove Ingredient", f, class: "btn btn-danger btn-sm pull-right form-button" "form-control"
+	.row
+		.nested-fields
+			.col-md-9.pull-left
+				= f.input :name, input_html: { class: 'form-control' }
+			.col-md-3.pull-right
+				.center_ingredient_button
+					= link_to_remove_association "Remove Ingredient", f, class: "btn btn-danger btn-sm pull-right form-button" "form-control"
