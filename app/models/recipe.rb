@@ -2,6 +2,7 @@ class Recipe < ActiveRecord::Base
 	belongs_to :user
 	acts_as_votable
 
+	has_many :comments
 	has_many :ingredients, dependent: :destroy
 	has_many :directions, dependent: :destroy
 

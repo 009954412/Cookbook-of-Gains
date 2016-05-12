@@ -1,0 +1,51 @@
+$dark_gray: #2B2E2E;
+$light_gray: #C0C1C1;
+$red: #FF0000;
+
+#comments {
+	h2 {
+			color: white;
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			border-bottom: 2px solid #E9E9E9;
+		}
+
+	.comment {
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			color: white;
+			font-size: 1.5rem;
+			padding: 1em 0;
+			.lead {
+				margin-bottom: 0;
+				}
+		}
+}
+
+.text{
+			font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+			color: white;
+			font-size: 3rem;
+			text-align: center;
+			vertical-align: middle;
+			min-height: 110.91px;
+			max-height: 110.91px;
+	}
+
+.field{
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		color: black;
+	}
+
+p.lead{
+	padding-left: 50px;
+	padding-right: 50px;
+	font-size: 2.5rem;
+}
+
+small{
+	padding-left: 50px;
+	padding-right: 50px;
+	font-size: 1.5rem;
+}

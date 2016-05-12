@@ -47,3 +47,26 @@
 			- if user_signed_in? && ((@recipe.user.id == current_user.id) || current_user.admin?)
 				= link_to "Edit", edit_recipe_path, class: "btn btn-custom pull-right" 
 				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-custom btn-space pull-right"
+
+	%br
+	%br
+	%br
+
+	.row
+		#comments
+			%h2
+				= @recipe.comments.count 
+				Comments
+			.comment
+				= render :partial => @recipe.comments
+
+			= simple_form_for [@recipe, Comment.new]  do |f|
+				.row
+					.col-md-2
+						#comments
+							.text
+								Comment on the recipe:
+					.col-md-10
+						.field
+							= f.text_area :body, class: "form-control"
+				= f.submit "Add Comment", class: "btn btn-custom pull-right"
